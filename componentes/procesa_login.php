@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'conexion.php'; // Archivo de conexión a la base de datos
+require_once '../API/conn/conexion.php';// Archivo de conexión a la base de datos
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['username'];
