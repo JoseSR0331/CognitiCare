@@ -30,7 +30,7 @@ unset($_SESSION['error']);
                             <div class="alert alert-danger"><?php echo $error; ?></div>
                         <?php endif; ?>
 
-                        <form action="procesa_login.php" method="POST">
+                        <form action="componentes/procesa_login.php" method="POST">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Usuario</label>
                                 <input type="text" class="form-control" id="username" name="username" required placeholder="Ingresa tu usuario" value="<?php echo isset($_COOKIE['username']) ? $_COOKIE['username'] : ''; ?>">

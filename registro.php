@@ -26,7 +26,7 @@ session_start();
                         <h3 class="card-title text-center mb-4">Registro de Usuario</h3>
 
                         <!-- Formulario de Registro -->
-                        <form action="procesa_registro.php" method="POST">
+                        <form action="componentes/procesa_registro.php" method="POST">
                             <!-- Campo de Nombre -->
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombre</label>
