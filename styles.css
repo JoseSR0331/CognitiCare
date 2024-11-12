@@ -1,0 +1,101 @@
+/* Elimina el pading en los formularios de login y registro */
+.no-padding-top {
+    padding-top: 0 !important;
+}
+
+body {
+    background-color: #73df73; /* Fondo Global de color Verde claro */
+    font-family: Arial, sans-serif;
+    padding-top: 130px; /* Espacio para barra superior y navbar */
+    margin: 20px; /* Añade un margen global para el espacio entre el contenido y el navbar */
+}
+
+/* Login Card */
+.custom-card {
+    background-color: #ffffff; /* Tono más oscuro que el fondo principal */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7); /* Sombra para darle profundidad */
+    border-radius: 8px; /* Bordes redondeados */
+    color: #333;
+}
+
+
+/* Estilos para texto */
+h1, h2, h3, h4, h5, h6 {
+    color: #2d6a4f;
+}
+
+p, a, li {
+    color: #333;
+}
+
+/* Barra superior */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #73df73;
+    color: #fff;
+}
+
+.top-bar .logo img {
+    max-height: 100px; /* Ajusta la altura del logo */
+}
+
+.user-info {
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Navbar */
+.navbar-custom {
+    background-color: #333;
+    top: 100px; /* Ajusta la altura de la barra superior */
+}
+
+.navbar-custom .navbar-brand {
+    padding: 10px 15px;
+    font-size: 1em;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+    color: #e2e1e1;
+    text-align: center;
+    padding: 10px 0px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Mapa */
+#map {
+    height: 500px; /* Ajusta la altura del mapa */
+    width: 70%; /* Ocupa la mitad del contenedor para mostrar informacion relacionada al lado derecho */
+    margin-bottom: 20px; /* Espacio para que no se superponga al pie */
+}
+.map-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.map-container .map-info {
+    flex: 1;
+    max-width: 400px;
+    margin-left: 20px;
+}
+
+.map-info {
+    background-color: #f8f9fa; /* Fondo claro */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+.map-info h2 {
+    color: #343a40;
+}
