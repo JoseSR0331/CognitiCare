@@ -32,7 +32,7 @@ unset($_SESSION['error']);
                         <?php endif; ?>
 
                         <!-- Formulario de inicio de sesion -->
-                        <form action="componentes/procesa_login.php" method="POST">
+                        <form action="./componentes/procesa_login.php" method="POST">
                             <!-- Nombre de usuario -->
                             <div class="mb-3">
                                 <label for="username" class="form-label">Usuario</label>
