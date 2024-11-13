@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($stmt->execute()) {
         $_SESSION['success'] = "Registro exitoso. Por favor, inicia sesión.";
-        header("Location: login.php");
+        header("Location: ../login.php");
         exit();
     } else {
         $_SESSION['error'] = "Error al registrar el usuario.";

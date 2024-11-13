@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 setcookie('remember_email', "", time() - 3600, "/");
             }
 
-            header("Location: index.php");
+            header("Location: ../index.php");
             exit();
         } else {
             $_SESSION['error'] = "Contraseña incorrecta.";
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $_SESSION['error'] = "Usuario no encontrado.";
     }
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit();
 }
 ?>

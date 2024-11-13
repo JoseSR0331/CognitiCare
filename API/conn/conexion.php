@@ -1,7 +1,14 @@
 <?php
-//Servidor, usuario, password, bd
-$mysqli = new mysqli("127.0.0.1", "root", "12345678","bd");
-if(mysqli_connect_errno()){
-    echo "ERORR";
-} 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "cogniticare";
+
+// Crear conexión
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
+}
 ?>
