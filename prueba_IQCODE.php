@@ -6,7 +6,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 //Identificar ID de Usuario y de Prueba
 $id_usuario = $_SESSION['user_id'];
-$id_prueba = 3;
+$id_prueba = 4;
 //Añadir los componentes para el funcionamiento especifico de la pagina
 include("./componentes/encabezado.php");
 include("./API/conn/conexion.php");
@@ -20,7 +20,7 @@ $preguntas = obtenerPreguntas($conn, $id_prueba);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CognitiCare - Prueba Escala de Depresion Geriatrica</title>
+    <title>CognitiCare - Prueba IQCODE</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <!-- Bootstrap Icons -->
@@ -33,7 +33,7 @@ $preguntas = obtenerPreguntas($conn, $id_prueba);
 </head>
 <body>
 <div class="container mt-5" id="content">
-    <h1>Prueba Escala de Depresion Geriatrica</h1>
+    <h1>Prueba IQCODE</h1>
     <div id="message" class="alert alert-warning d-none"></div>
     <!-- Cuestionario -->
     <div class="question-container">

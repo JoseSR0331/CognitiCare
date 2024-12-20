@@ -1,0 +1,296 @@
+/* Estilo general para mantener el footer fijo al final */
+body, html {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+/* deja el body de la pagina de Pruebas.php con los valores por default debido a un conflicto que no mostraba correctamente el grid de las cards de bootstrap */
+.bodyPruebas{
+    display: block !important;
+}
+
+/* Estilo del Sidebar */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #212529;
+    color: white;
+    padding-top: 60px; /* Espacio para el navbar */
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto; /* Scroll si el contenido excede la altura */
+    transform: translateX(0); /* Siempre visible */
+    transition: transform 0.3s ease-in-out; /* Transición suave */
+}
+
+#sidebar.collapsed {
+    transform: translateX(-250px);
+}
+
+#sidebar .nav-link {
+    color: white;
+}
+
+#sidebar .nav-link:hover {
+    background-color: #3b3f44;
+}
+
+#sidebar .nav-heading {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #adb5bd;
+}
+
+#sidebar .sidebar-footer {
+    background-color: #3b3f44;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Contenido Principal general */
+#content {
+    margin-left: 250px;
+    padding-top: 45px;
+    width: calc(100% - 250px); /* Ajustar dinámicamente */
+    display: flex;
+    flex-direction: column;
+    transition: margin-left 0.3s ease-in-out; /* Transición suave */
+}
+#content.collapsed {
+    margin-left: auto;
+    width: 100%; /* Ocupa todo el ancho cuando el sidebar está colapsado */
+    display: flex;
+    flex-direction: column;
+}
+/*Content especifico de index*/
+#content-index {
+    margin-left: 250px;
+    padding-top: 15px;
+    width: calc(100% - 250px); /* Ajustar dinámicamente */
+    display: flex;
+    flex-direction: column;
+    transition: margin-left 0.3s ease-in-out; /* Transición suave */
+}
+#content-index.collapsed {
+    margin-left: 0;
+    width: 100%; /* Ocupa todo el ancho cuando el sidebar está colapsado */
+    display: flex;
+    flex-direction: column;
+}
+/* Contenido Principal perfil */
+#content-perfil {
+    margin-left: 250px;
+    margin-top: 15px;
+    padding-top: 45px;
+    width: calc(100% - 250px); /* Ajustar dinámicamente */
+    display: flex;
+    flex-direction: column;
+    transition: margin-left 0.3s ease-in-out; /* Transición suave */
+}
+#content-perfil.collapsed {
+    margin-left: auto;
+    width: 100%; /* Ocupa todo el ancho cuando el sidebar está colapsado */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ajustes del Navbar */
+.navbar {
+    z-index: 1050; /* Por encima del sidebar */
+}
+.navbar-brand img {
+    height: 40px; /* Tamaño fijo para el icono */
+    max-width: 100%; /* Evita desbordes */
+    margin-right: 10px;
+}
+.navbar form.d-flex {
+    margin: 0 8px 0 0 !important; /* Uniforme para todos los navegadores */
+}
+
+/* Estilo para la tarjeta de bienvenida */
+.hero-card {
+    /* fallback for old browsers */
+    background: #f06292;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #fbc2eb, #f9a8d4, #f78fb3, #f06292);
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #fbc2eb, #f9a8d4, #f78fb3, #f06292);
+    color: white;
+    padding: 3rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    flex-shrink: 0; /* El footer no se encoge */
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #f8f9fa;
+}
+
+/* Estilo del gradiente del login */
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #f06292;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #fbc2eb, #f9a8d4, #f78fb3, #f06292);
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #fbc2eb, #f9a8d4, #f78fb3, #f06292);
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        transform: translateX(-250px); /* Ocultar sidebar en dispositivos pequeños */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    #sidebar.active {
+        transform: translateX(0); /* Mostrar sidebar cuando está activo */
+    }
+
+    #content {
+        margin-left: 0;
+        width: 100%; /* Ocupa todo el ancho */
+    }
+
+    #content.sidebar-active {
+        margin-left: 250px;
+        width: calc(100% - 250px);
+    }
+}
+
+/* Mapa */
+#map {
+    flex-grow: 1; /* Permitir que el mapa se ajuste dinámicamente */
+    width: 75%; /* anchura en 75% para dejar el espacio restante al card de la info */
+    height: 500px; /* Altura fija */
+    margin-bottom: 20px;
+}
+
+/* Contenedor del mapa e información */
+.map-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0; /* Espacio uniforme */
+}
+
+/* Información adicional al lado del mapa */
+.map-info {
+    /* fallback for old browsers */
+    background: #f06292;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #fbc2eb, #f9a8d4, #f78fb3, #f06292);
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #fbc2eb, #f9a8d4, #f78fb3, #f06292);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 400px; /* Tamaño máximo */
+    flex: 1;
+    margin-left: 20px;
+}
+
+/* Carrusel de fotos */
+.carousel-inner .carousel-item img {
+    width: 100%;
+    height: 600px; /* Ajusta la altura según lo que necesites */
+    object-fit: cover; /* Mantiene el enfoque central de la imagen, evitando distorsión */
+}
+.carousel-caption h5 {
+    color: #f35287; 
+}
+.carousel-caption p {
+    color: white; 
+}
+
+/* Estilo general del acordeón */
+.accordion-item {
+    color: #f06292; /* Color del texto */
+    background-color: #f8f9fa; /* Fondo del acordeón cerrado */
+}
+/* Botón del acordeón antes de abrirse */
+.accordion-button {
+    color: #f8f9fa; /* Texto del botón */
+    background: linear-gradient(to left, #fbc2eb, #f9a8d4, #f78fb3, #f06292); /* Fondo cerrado */
+}
+/* Color de delineado */
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.2rem rgb(240, 98, 146, 0.2); /* Sombra con color del texto */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/*Cards de la pagina relacionados */
+/* Card 1 */
+.cardRelacionados1 .card {
+    border: 2px solid #fff3f8; /* Borde rosa */
+    background: linear-gradient(to left, #fbc2eb, #f9a8d4, #f78fb3, #f06292);
+    box-shadow: 0 4px 8px rgba(240, 98, 146, 0.4); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cardRelacionados1 .card:hover {
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(240, 98, 146, 0.6);
+}
+/* Card 2 */
+.cardRelacionados2 .card {
+    border: 2px solid #fff3f8; /* Borde rosa */
+    background: linear-gradient(to right, #fbc2eb, #f9a8d4, #f9a8d4, #fbc2eb);
+    box-shadow: 0 4px 8px rgba(240, 98, 146, 0.4); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cardRelacionados2 .card:hover {
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(240, 98, 146, 0.6);
+}
+/* Card 3 */
+.cardRelacionados3 .card {
+    border: 2px solid #fff3f8; /* Borde rosa */
+    background: linear-gradient(to right, #fbc2eb, #f9a8d4, #f78fb3, #f06292);
+    box-shadow: 0 4px 8px rgba(240, 98, 146, 0.4); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cardRelacionados3 .card:hover {
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(240, 98, 146, 0.6);
+}
+
+/* Boton de referencias */
+.btn-custom {
+    border: 2px solid #f06292; /* Borde rosa */
+    background-color: #fff3f8; /* Fondo claro */
+    color: #f06292; /* Color del texto e icono */
+    box-shadow: 0 4px 8px rgba(240, 98, 146, 0.2); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+}
+.btn-custom:hover {
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(240, 98, 146, 0.6);
+    background-color: #f06292; /* Fondo rosa al pasar el mouse */
+    color: #fff; /* Texto e icono en blanco */
+    border-color: #fff;
+}
+.btn-custom i {
+    margin-right: 5px; /* Espaciado entre el icono y el texto */
+}
+.btn-logo {
+    height: 24px; /* Altura de la imagen */
+    width: auto; /* Mantener proporción */
+    max-height: 80%; /* Asegurar que la imagen no exceda el tamaño del botón */
+}

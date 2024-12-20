@@ -1,19 +1,25 @@
-<!DOCTYPE html>
-<html lang="es">
 <?php
+session_start();
 include("./componentes/encabezado.php");
 ?>
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CognitiCare - Mapa</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="Estilos/styles.css">
 </head>
 <body>
-    <div class="container mt-5">
+    <!-- Contenido Principal -->
+    <div id="content">
         <div class="map-container">
             <!-- Contenedor del Mapa -->
             <div id="map"></div>
@@ -27,21 +33,24 @@ include("./componentes/encabezado.php");
         </div>
     </div>
 
+    <!-- Footer -->
+    <?php
+    include("./componentes/pie.php");
+    ?>
+
+    <!-- Sripts de la pagina -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // Pasar el array de PHP a JavaScript
+    const pages = <?php echo json_encode($pages); ?>;
+    </script>
+    <!-- Main JS -->
+    <script src="Scripts/main.js"></script>
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script>
-        // Inicializar el mapa en el contenedor 'map' con las coordenadas del CEMAM
-        var map = L.map('map').setView([20.723761072414128, -103.41124152135987], 16);
-
-        // Cargar y mostrar el mapa de OpenStreetMap
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; OpenStreetMap contributors'
-        }).addTo(map);
-
-        // Agregar un marcador en la ubicación del CEMAM
-        var marker = L.marker([20.723761072414128, -103.41124152135987]).addTo(map);
-        marker.bindPopup("<b>CEMAM</b><br>Centro Metropolitano del Adulto Mayor<br>Cerrada Santa Laura, Av Sta Margarita S/N, Real del Parque, Zapopan, Jalisco.").openPopup();
-    </script>
+    <!-- Scripts del mapa -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-5wCXg/U9mrv8DYkkvrFySD4ThJuZrwntgGbkT0i2yHk=" crossorigin=""></script>
+    <script src="Scripts/map.js"></script>
 </body>
 </html>
