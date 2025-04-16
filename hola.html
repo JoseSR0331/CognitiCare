@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Generar PDF</title>
 </head>
 <body>
+    <h1>Generar Reporte de Resultados</h1>
     <button id="descargarPDF">Descargar PDF</button>
 
     <script>
         document.getElementById('descargarPDF').addEventListener('click', function() {
-        // Enviar una solicitud a PHP para generar el PDF
-        window.location.href = 'pdf.php';  // Esto redirige a PHP y genera el PDF automáticamente
+            // Redirigir a pdf.php para generar y descargar el PDF
+            window.location.href = 'pdf.php';
         });
-
     </script>
 </body>
 </html>
