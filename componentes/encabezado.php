@@ -45,7 +45,7 @@ if (isset($_SESSION['username'])) {
                 <i class="bi bi-layout-sidebar-inset" style="font-size: 1.2rem;"></i>
             </button>
             <!-- Icono y Nombre del Proyecto -->
-            <a class="navbar-brand d-flex align-items-center" href="#">
+            <a class="navbar-brand d-flex align-items-center" href="index.php">
                 <img src="./imgs/logo-removebgNOLETTERS.png" alt="Icono CognitiCare">
                 CognitiCare
             </a>

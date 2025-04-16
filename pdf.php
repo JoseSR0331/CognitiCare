@@ -4,7 +4,7 @@ require_once('./componentes/fpdf/html2pdf.php');
 // Crear una nueva instancia de FPDF
 $pdf = new PDF_HTML();
 $pdf->AddPage();
-$pdf->SetFont('helvetica', '', 12);
+$pdf->SetFont('helvetica', '', 11);
 
 // Conectar a la base de datos
 $conn = new mysqli("localhost", "root", "", "cogniticare");
